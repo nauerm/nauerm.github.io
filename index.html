@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
 <style>
 h1 {text-align: center;
     color: white;
@@ -13,21 +15,42 @@ footer {
   text-align: center;
   color: white;
 }
+.column {
+                float: left;
+                padding-left: 8px;
+                padding-top: 5px;
+            }
 
-div {text-align: center;}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 </style>
   <title>Nauê Magalhães | Personal Page</title>
 </head>
 <body style="font-family: 'Trebuchet MS', sans-serif; font-size:20px">
 <p></p>
 <div style="background-image: url('https://i.ibb.co/jbxB8QW/background.png'); 
-  background-size: cover; height:130px; padding-top:40px;">
-<h1>Nauê Magalhães</h1>
+  background-size: cover; height:130px; padding-top:20px;">
+<h1>Nauê Magalhães
+  <div class="row">
+    <div class="column">
+      <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
+  </div>
+    <div class="column">
+      <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
+    </div>
+  </div>
+</h1>
+  
 </div>
 <img alt="perfil" src="https://avatars.githubusercontent.com/u/60182017?v=4" style="display: block; border-radius: 50%;margin-left: auto;
 margin-right: 0.5cm;
 margin-top: 1cm;
-width: 12%;" align="right" >
+width: 150px" align="right" >
+
+<br>
 
 <p>I'm a Control and Automation Engineer, embedded systems developer and a Master's student at the School of Electrical and Computer Engineering at Unicamp (FEEC/Unicamp).</p>
 <p>This page will be updated with my projects and algorithms mainly in the areas:</p>
@@ -42,10 +65,10 @@ width: 12%;" align="right" >
 <img src="https://s8.gifyu.com/images/GBM.gif" alt="GBM" style="width:33%">
 <img src="https://s8.gifyu.com/images/Stock-price56b17c4d55a6f509.gif" alt="Stock Price" style="width:33%">
 
+
 </body>
 
 <footer>
-  <p><a href="https://nauerm.github.io/">nauerm.github.io</a></p>
 </footer>
 
 </html>
