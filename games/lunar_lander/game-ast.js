@@ -42,9 +42,9 @@ var fuel = MAX_FUEL;
 
 // @note Floor generation variables
 
-var floor_units = 50;
+var floor_units = 20;
 const floor_tile_size = cvs.width/floor_units;
-const rnd_floor_height = 400;
+const rnd_floor_height = 50;
 var floor_heights = [];
 min_floor_diff= 1.5;
 
@@ -198,6 +198,10 @@ function drawtexts() //@note Texts
     ctx.fillText("Horizontal velocity: "+parseFloat(vel_x.toFixed(1)),10,controls_height+70);
     ctx.fillText("Thrusters: "+parseFloat((SHIP_THRUST*100/SHIP_THRUST_MAX).toFixed(0))+"%",10,controls_height+90);
     ctx.fillText("Rotation: "+parseFloat(radians_to_degrees(ship.a).toFixed(0)-90)+"º",10,controls_height+110);
+    
+    ctx.font = "10px Verdana";
+    ctx.fillStyle = "black";
+    ctx.fillText("Alpha version",cvs.width-80,cvs.height-10);
     
     if (debug == 1)
     {
