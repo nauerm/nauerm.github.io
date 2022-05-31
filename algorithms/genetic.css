@@ -3,10 +3,19 @@ h1 {
     font-size:26px;
     text-align: center;
     color: rgb(0, 0, 0);
-    text-shadow: 3px 2px 2px rgb(199, 199, 199)	
+    /* text-shadow: 2px 1px 1px rgb(155, 184, 171)	 */
 }
 body {
     font-family: 'Trebuchet MS', sans-serif; 
-    font-size:20px;
+    font-size:14px;
     color: rgb(0, 0, 0);
 }
+
+/* hr:after {
+    background: #fff;
+    content: '§';
+    background:url('/assets/dna.svg'); 
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}  */
