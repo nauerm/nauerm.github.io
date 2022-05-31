@@ -14,7 +14,6 @@ function gen_alg()
     // @note Create random strings
     for (i = 0; i< population; i++)
     {   
-        
         for(var a = ''; a.length < obj_len;) a += "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz"[(Math.random() * 60) | 0];
         gen_sen[i] = "<br>"+a;
     }
@@ -25,3 +24,8 @@ function gen_alg()
 }
 
 gen_alg();
+
+var string1 = "World";
+var string2 = "Wasde";
+var result = string1.localeCompare(string2);
+document.getElementById("test").innerHTML = result;
