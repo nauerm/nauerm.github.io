@@ -201,67 +201,9 @@ function drawtexts() //@note Texts
     
     ctx.font = "10px Verdana";
     ctx.fillStyle = "black";
-    ctx.fillText("Alpha version",cvs.width-80,cvs.height-10);
-    
-    if (debug == 1)
-    {
-        ctx.fillStyle = "#507080";
-        ctx.font = (10+cvs.width/500)+"px Verdana";
-        const debug_height=170;
-        ctx.fillText("Debug:",10,debug_height);
-        ctx.fillText("ship.thrust.y: "+parseFloat(ship.thrust.y.toFixed(1)),10,debug_height+15);
-        ctx.fillText("ship.thrust.x: "+parseFloat(ship.thrust.x.toFixed(1)),10,debug_height+30);
-        ctx.fillText("ship angle: "+parseFloat(ship.a.toFixed(3)),10,debug_height+45);
-        ctx.fillText("ship thrust: "+parseFloat(SHIP_THRUST.toFixed(1)),10,debug_height+60);
-        ctx.fillText("vel x: "+parseFloat(vel_x.toFixed(1)),10,debug_height+75);
-        ctx.fillText("ship.x "+parseFloat(ship.x.toFixed(1)),10,debug_height+90);
-        ctx.fillText("vel y "+parseFloat(vel_y.toFixed(1)),10,debug_height+105);
-        ctx.fillText("floor units: "+parseFloat(floor_units.toFixed(1)),10,debug_height+120);
-        ctx.fillText("flat = "+flat,10,debug_height+135);
-        ctx.fillText("floor size "+parseFloat(floor_tile_size.toFixed(1)),10,debug_height+150);
-
-        // collision detection
-        ctx.fillStyle = "yellowgreen";
-        ctx.font = "16px Verdana";
-        ctx.fillText("Over the segment: "+seg_int+"-"+(seg_int+1),cvs.width/2-100,200);
-        ctx.fillText("Floor height from "+parseFloat(floor_heights[seg_int].toFixed(2))+" to "+parseFloat(floor_heights[seg_int+1].toFixed(2)),cvs.width/2-140,230);
-
-        //to do list
-        const todo_height = cvs.height-240;
-        ctx.fillStyle = "#507080";
-        ctx.font = (10+cvs.width/500)+"px Verdana";
-        ctx.fillText("To do list:",10,todo_height);
-        ctx.fillText("• Stop thrusting even if key is pressed when fuel is depleted",10,todo_height+20);
-        ctx.fillText("• Implement collision with the floor",10,todo_height+40);
-        ctx.fillText("• Bar to indicate fuel",10,todo_height+60);
-        ctx.fillText("• Better graphics",10,todo_height+80);
-
-        //floor heights and labels
-        ctx.fillStyle = "white";
-        ctx.font = "10px Verdana";
-        ctx.fillText(""+parseFloat(floor_heights[0].toFixed(2)),5,cvs.height-floor_heights[0]-15);
-        ctx.fillText(""+parseFloat(floor_heights[1].toFixed(2)),1*floor_tile_size,cvs.height-floor_heights[1]-15);
-        ctx.fillText(""+parseFloat(floor_heights[2].toFixed(2)),2*floor_tile_size,cvs.height-floor_heights[2]-15);
-        ctx.fillText(""+parseFloat(floor_heights[3].toFixed(2)),3*floor_tile_size,cvs.height-floor_heights[3]-15);
-        ctx.fillText(""+parseFloat(floor_heights[4].toFixed(2)),4*floor_tile_size,cvs.height-floor_heights[4]-15);
-        ctx.fillText(""+parseFloat(floor_heights[5].toFixed(2)),5*floor_tile_size,cvs.height-floor_heights[5]-15);
-        ctx.fillText(""+parseFloat(floor_heights[6].toFixed(2)),6*floor_tile_size,cvs.height-floor_heights[6]-15);
-        ctx.fillText(""+parseFloat(floor_heights[7].toFixed(2)),7*floor_tile_size,cvs.height-floor_heights[7]-15);
-        ctx.fillText(""+parseFloat(floor_heights[8].toFixed(2)),8*floor_tile_size-30,cvs.height-floor_heights[8]-15);
-
-        ctx.font = "15px Verdana";
-        ctx.fillText("0",10,cvs.height-floor_heights[0]-25);
-        ctx.fillText("1",1*floor_tile_size,cvs.height-floor_heights[1]-25);
-        ctx.fillText("2",2*floor_tile_size,cvs.height-floor_heights[2]-25);
-        ctx.fillText("3",3*floor_tile_size,cvs.height-floor_heights[3]-25);
-        ctx.fillText("4",4*floor_tile_size,cvs.height-floor_heights[4]-25);
-        ctx.fillText("5",5*floor_tile_size,cvs.height-floor_heights[5]-25);
-        ctx.fillText("6",6*floor_tile_size,cvs.height-floor_heights[6]-25);
-        ctx.fillText("7",7*floor_tile_size,cvs.height-floor_heights[7]-25);
-        ctx.fillText("8",8*floor_tile_size-20,cvs.height-floor_heights[8]-25);
-        
-    }
-
+    ctx.fillText("Alpha version",cvs.width-80,cvs.height-20);
+    ctx.fillText("by naue",cvs.width-80,cvs.height-7);
+ 
 }
 
 var flat = 0;
