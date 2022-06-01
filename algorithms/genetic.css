@@ -6,9 +6,10 @@ h1 {
     /* text-shadow: 2px 1px 1px rgb(155, 184, 171)	 */
 }
 body {
-    font-family: 'Trebuchet MS', sans-serif; 
-    font-size:14px;
+    font-family: 'Tahoma', cursive; 
+    font-size:15px;
     color: rgb(0, 0, 0);
+    padding: 10px 10px;
 }
 
 /* hr:after {
