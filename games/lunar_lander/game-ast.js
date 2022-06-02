@@ -27,7 +27,7 @@ var seg_int = 0;
 var floor_height = 40;
 var fuel_on = 1;
 
-const MAX_FUEL = 100;
+const MAX_FUEL = 20;
 const FPS = 30; // frames per second
 const FRICTION = 0.7; // friction coefficient of space (0 = no friction, 1 = lots of friction)
 const SHIP_SIZE = 10; // ship height in pixels
@@ -37,6 +37,10 @@ const MAX_THRUST_VECTOR = 20; // thrust vector for the fire triangle
 const max_landing_speed = 2.5;
 const angle_lim = 0.15;
 const debug = 0;
+const fuel_bar_length = 100;
+const fuel_bar_height = 10;
+const fuel_bar_start_x = 130;
+const fuel_bar_start_y = 38;
 
 var fuel = MAX_FUEL;
 
@@ -383,6 +387,56 @@ function draw()
         ctx.strokeStyle="#ffffff";
         ctx.strokeRect(0, 0, cvs.width, cvs.height);//for white background
         
+        
+        //@note Draw fuel bar
+        //background
+        ctx.strokeStyle = "white";
+        ctx.fillStyle = "black";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo( // top left
+            fuel_bar_start_x,
+            fuel_bar_start_y
+        );
+        ctx.lineTo( // top right
+            fuel_bar_start_x+fuel_bar_length,
+            fuel_bar_start_y    
+        );
+        ctx.lineTo( // bottom right
+            fuel_bar_start_x+fuel_bar_length,
+            fuel_bar_start_y+fuel_bar_height     
+        );
+        ctx.lineTo( // bottom left
+            fuel_bar_start_x,
+            fuel_bar_start_y+fuel_bar_height     
+        );
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // fuel
+        ctx.fillStyle = "lightsteelblue";
+        ctx.lineWidth = 0;
+        ctx.beginPath();
+        ctx.moveTo( // top left
+            fuel_bar_start_x,
+            fuel_bar_start_y
+        );
+        ctx.lineTo( // top right
+            fuel_bar_start_x+fuel_bar_length*(fuel/MAX_FUEL),
+            fuel_bar_start_y    
+        );
+        ctx.lineTo( // bottom right
+            fuel_bar_start_x+fuel_bar_length*(fuel/MAX_FUEL),
+            fuel_bar_start_y+fuel_bar_height     
+        );
+        ctx.lineTo( // bottom left
+            fuel_bar_start_x,
+            fuel_bar_start_y+fuel_bar_height     
+        );
+        ctx.closePath();
+        ctx.fill();
+
         drawFloor();        
 
         drawtexts();
