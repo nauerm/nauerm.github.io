@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="genetic.css">
+      <meta charset="UTF-8">
+    </head>
+      
+    <body>
+        <h1>
+            Genetic algorithm
+        </h1>
+        <h2>
+            Alpha version
+        </h2>
+        <hr></hr>
+        <div>
+            This is a genetic algorithm example to try and write the sentence <br>"<span id="obj_str"></span>".
+        </div>
+        <br>
+        <div>
+            The objective sentence has <span id="obj_len"></span> characters.
+        </div>
+        <br>
+        <div>
+            Population size: <span id="pop_size"></span>
+        </div>
+        <br>
+        <div>
+            Generated strings: 
+            <br>
+            <span id="gen_str0"></span> Fitness: <span id="fitness0"></span> Right-chars: <span id="right_char0"></span> Right-pos: <span id="right_pos0"></span>
+            <br>
+            <span id="gen_str1"></span> Fitness: <span id="fitness1"></span> Right-chars: <span id="right_char1"></span> Right-pos: <span id="right_pos1"></span>
+            <br>
+            <span id="gen_str2"></span> Fitness: <span id="fitness2"></span> Right-chars: <span id="right_char2"></span> Right-pos: <span id="right_pos2"></span>
+            <br>
+            <span id="gen_str3"></span> Fitness: <span id="fitness3"></span> Right-chars: <span id="right_char3"></span> Right-pos: <span id="right_pos3"></span>
+            <br>
+            <span id="gen_str4"></span> Fitness: <span id="fitness4"></span> Right-chars: <span id="right_char4"></span> Right-pos: <span id="right_pos4"></span>
+            <br><br>
+            Objective: 
+            <br>
+            <span id="obj2"></span>
+        </div>
+        <hr></hr>
+        
+
+    </body>
+
+    <script  src="genetic.js"></script>
+
+</html>
