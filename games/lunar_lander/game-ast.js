@@ -36,8 +36,7 @@ const TURN_SPEED = 1.5;
 const MAX_THRUST_VECTOR = 20; // thrust vector for the fire triangle
 const max_landing_speed = 2.5;
 const angle_lim = 0.15;
-const debug = 0;
-const fuel_bar_length = 100;
+const fuel_bar_length = cvs.width-420;
 const fuel_bar_height = 10;
 const fuel_bar_start_x = 130;
 const fuel_bar_start_y = 38;
@@ -46,9 +45,9 @@ var fuel = MAX_FUEL;
 
 // @note Floor generation variables
 
-var floor_units = 20;
+var floor_units = 40;
 const floor_tile_size = cvs.width/floor_units;
-const rnd_floor_height = 50;
+const rnd_floor_height = 200;
 var floor_heights = [];
 min_floor_diff= 1.5;
 
@@ -422,7 +421,7 @@ function draw()
 
         //@note Draw fuel bar
         //background
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "cyan";
         ctx.fillStyle = "black";
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -447,7 +446,7 @@ function draw()
         ctx.stroke();
 
         // fuel
-        ctx.fillStyle = "lightsteelblue";
+        ctx.fillStyle = "springgreen";
         ctx.lineWidth = 0;
         ctx.beginPath();
         ctx.moveTo( // top left
@@ -504,8 +503,8 @@ function draw()
                     ship.y + ship.r * (2 / 3 * Math.sin(ship.a) - 0.5 * Math.cos(ship.a))
                 );
                 ctx.lineTo( // rear centre (behind the ship)
-                    ship.x - 0.8*(ship.r) * 5 / 3 * Math.cos(ship.a) - ((SHIP_THRUST/SHIP_THRUST_MAX)*MAX_THRUST_VECTOR*Math.cos(ship.a)),
-                    ship.y + 0.8*(ship.r) * 5 / 3 * Math.sin(ship.a) + ((SHIP_THRUST/SHIP_THRUST_MAX)*MAX_THRUST_VECTOR*Math.sin(ship.a))
+                    ship.x - 0.8*(ship.r) * 5 / 3 * Math.cos(ship.a) - ((SHIP_THRUST/SHIP_THRUST_MAX)*MAX_THRUST_VECTOR*Math.cos(ship.a)) + 1*Math.random(),
+                    ship.y + 0.8*(ship.r) * 5 / 3 * Math.sin(ship.a) + ((SHIP_THRUST/SHIP_THRUST_MAX)*MAX_THRUST_VECTOR*Math.sin(ship.a)) + 2*Math.random()
                 );
                 ctx.lineTo( // rear right
                     ship.x -ship.r * (2 / 3 * Math.cos(ship.a) - 0.5 * Math.sin(ship.a)),
