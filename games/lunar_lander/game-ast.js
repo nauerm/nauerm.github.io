@@ -618,9 +618,9 @@ function draw()
         else if(altitude <= floor_height+ship.r*2+8 &&
             !(ship.x>=seg_int*floor_tile_size && (seg_int+1)*floor_tile_size<=580))
         {
-        ctx.fillStyle = "lightgreen";
+        ctx.fillStyle = "crimson";
         ctx.font = "20px Trebuchet MS";
-        ctx.fillText("Outside of landing pad",cvs.width/2-110,cvs.height/2+30);
+        ctx.fillText("Crashed",cvs.width/2-50,cvs.height/2+30);
         ctx.fillText("Press Space to restart",cvs.width/2-105,cvs.height/2+60);
         game_on = 2; 
         ship.x = ship.x
