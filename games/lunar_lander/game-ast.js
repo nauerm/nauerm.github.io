@@ -45,7 +45,7 @@ var fuel = MAX_FUEL;
 
 // @note Floor generation variables
 
-var floor_units = 40;
+var floor_units = 30;
 const floor_tile_size = cvs.width/floor_units;
 const rnd_floor_height = 200;
 var floor_heights = [];
@@ -184,6 +184,10 @@ function drawtexts() //@note Texts
     // ctx.fillStyle = "white";
     // ctx.fillText("white",cvs.width/2-15,20);
 
+    ctx.fillStyle = "springgreen";
+    ctx.font = "20px Verdana";
+    ctx.fillText("Land on the white floor tile",cvs.width/2-150,100);
+
     ctx.fillStyle = "lightsteelblue";
     const controls_height=40;
     ctx.font = (15+cvs.width/500)+"px Verdana";
@@ -195,10 +199,10 @@ function drawtexts() //@note Texts
     ctx.fillText("Left/A and Right/D: Rotation",cvs.width-padding_from_right,controls_height+90);
     ctx.fillText("Space: Pause",cvs.width-padding_from_right,controls_height+110);
     
-    ctx.fillText("Fuel: "+parseFloat((fuel*100/MAX_FUEL).toFixed(1))+"%",10,controls_height+10);
+    ctx.fillText("Fuel: "+parseFloat((fuel*100/MAX_FUEL).toFixed(0))+"%",10,controls_height+10);
     ctx.fillText("Altitude: "+parseFloat(altitude.toFixed(0)),10,controls_height+30);
-    ctx.fillText("Vertical velocity: "+parseFloat(vel_y.toFixed(1)),10,controls_height+50);
-    ctx.fillText("Horizontal velocity: "+parseFloat(vel_x.toFixed(1)),10,controls_height+70);
+    ctx.fillText("Vertical velocity: "+parseFloat((vel_y*10).toFixed(0)),10,controls_height+50);
+    ctx.fillText("Horizontal velocity: "+parseFloat((vel_x*10).toFixed(0)),10,controls_height+70);
     ctx.fillText("Thrusters: "+parseFloat((SHIP_THRUST*100/SHIP_THRUST_MAX).toFixed(0))+"%",10,controls_height+90);
     ctx.fillText("Rotation: "+parseFloat(radians_to_degrees(ship.a).toFixed(0)-90)+"º",10,controls_height+110);
     
