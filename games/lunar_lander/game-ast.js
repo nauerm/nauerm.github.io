@@ -26,6 +26,8 @@ var segment = 0;
 var seg_int = 0;
 var floor_height = 40;
 var fuel_on = 1;
+var ctr_txt = 0;
+var ctr_txt2 = 0;
 
 const MAX_FUEL = 20;
 const FPS = 30; // frames per second
@@ -184,9 +186,20 @@ function drawtexts() //@note Texts
     // ctx.fillStyle = "white";
     // ctx.fillText("white",cvs.width/2-15,20);
 
-    ctx.fillStyle = "springgreen";
-    ctx.font = "20px Verdana";
-    ctx.fillText("Land on the white floor tile",cvs.width/2-150,100);
+    if(ctr_txt<35)
+    {
+        if(ctr_txt2 == 0 ||ctr_txt2 == 2 ||ctr_txt2 == 4 ||ctr_txt2 == 6)
+        {
+            ctx.fillStyle = "springgreen";
+            ctx.font = "20px Verdana";
+            ctx.fillText("Land on the white landing pad",cvs.width/2-150,100);
+        }
+        ctr_txt++;
+    }else
+    {
+        ctr_txt2++;
+        ctr_txt=0;
+    }
 
     ctx.fillStyle = "lightsteelblue";
     const controls_height=40;
