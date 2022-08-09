@@ -1,0 +1,73 @@
+body{
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size:18px;
+    background-color: #333;
+}
+
+.container{
+    position:absolute;
+    width:1300px;
+    background-color: #fff;
+    left:50%;
+    top:20px;
+    transform: translateX(-50%);
+    border-radius: 12px;
+}
+#title{
+    text-align: center;
+    color: white;
+	text-shadow: 3px 2px 2px black;	
+    font-size:30pt;
+    font-weight: bold;
+}
+
+#crop-bg{
+    height:150px;
+    overflow:hidden;
+}
+#bg-img{
+    object-fit:contain;
+    border-radius: 10px;
+}
+
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity:0.8;
+}
+.overlay{
+    position:relative;
+    margin:30px;
+    z-index:9;
+}
+.content{
+    margin:80px 20px 20px 40px;
+}
+#profile-pic{
+    display: block; 
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: 0.5cm;
+    margin-top: 1cm;
+    width: 150px; 
+    float:right; 
+}
+/* Style the footer */
+footer {
+  background-color: rgb(80, 168, 127);
+  padding: 3px;
+  text-align: center;
+  color: white;
+}
+.column {
+                float: left;
+                padding-left: 8px;
+                padding-top: 5px;
+            }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
