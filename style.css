@@ -89,3 +89,10 @@ footer {
 li{
     padding-top:0.4em;
 }
+
+p::selection {
+    background: rgb(93, 190, 131);
+}
+li::selection {
+    background: rgb(93, 190, 131);
+}
