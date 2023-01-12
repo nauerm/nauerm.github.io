@@ -96,3 +96,23 @@ p::selection {
 li::selection {
     background: rgb(93, 190, 131);
 }
+#nav-text > a{
+    color: white;
+	text-shadow: 2px 2px 1px black;
+    font-size: 1.5em;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+}
+#nav-text > a:hover{
+    text-decoration:underline;
+}
+.row{
+    display:inline-block;
+    padding: 4.5px 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 0em 2em 0em 0em;
+}
+.column{
+    padding-right: 5px;
+}
