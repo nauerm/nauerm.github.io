@@ -116,3 +116,19 @@ li::selection {
 .column{
     padding-right: 5px;
 }
+.brief{
+    font-size:0.7em;
+}
+h4 > a{
+    text-decoration: none;
+}
+h1{
+    font-size:1.5em;
+}
+h2{
+    font-size:1.2em;
+}
+p.notes{
+    font-size:0.8em;
+    text-align: justify;
+}
