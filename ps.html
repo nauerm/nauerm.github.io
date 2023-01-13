@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="overlay">
-          <div id="title">Nauê Magalhães</div>
+        <div id="title"><a href="index.html">Nauê Magalhães</a></div>
         <div class="row">
           <div class="column">
             <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
@@ -34,11 +34,48 @@
         <h1>Particle Swarm Optimization</h1>
         <h2>Introduction</h2>
           <p class="notes">
-            There are several ways to maximize or minimize a function to find the optimum. To establish whether an optimization method is suitable for a problem, different aspects influence, such as concavity and differentiability of the function. The particle swarm optimization algorithm (PSO) proposed by Kennedy and Eberhart in 1995 is an algorithm based on the concept of swarm intelligence, generally observed in groups of animals such as schools and herds.
+            There are several ways to maximize or minimize a function to find the optimum. To establish whether an optimization method is suitable for a problem, different aspects influence, such as concavity and differentiability of the function. The particle swarm optimization algorithm (PSO) proposed by Kennedy and Eberhart in 1995<sup>[<a href="#ref-1">1</a>]</sup> is an algorithm based on the concept of swarm intelligence, generally observed in groups of animals such as fish shoals and herds.
+          </p>
+          <p class="notes">
+            Kennedy and Eberhart, inspired by the social behavior of birds, which grants them a great survival advantage when solving the problem of finding a safe place to land, proposed an algorithm that mimics this behavior. Compared to other optimization algorithms, PSO has some advantages because it has few tuning parameters and they are widely discussed in the literature. From the initial version of the algorithm, new formulations were developed. This note covers the classic version of PSO, also known as the inertial version.
           </p>
         <h2>Working Principles</h2>
-        <h2>Algorithm</h2>
+        <p class="notes">
+          The objective of an optimization problem is to determine the variable represented by a vector <span class="math">X = [x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ... ,x<sub>n</sub>]</span> where <span class="math">n</span> is the number of variables to the determined in the problem, that minimizes or maximizes the objective function <span class="math">f(X)</span>. For the PSO algorithm, considering a swarm of <span class="math">P</span> particles, there is a position vector <span class="math">X<sub>i</sub><sup>t</sup>=(x<sub>i1</sub> x<sub>i2</sub> ... x<sub>in</sub>)</span> and a velocity vector <span class="math">V<sub>i</sub><sup>t</sup>=(v<sub>i1</sub> v<sub>i2</sub> ... v<sub>in</sub>)</span>in the <span class="math">t<sup>th</sup></span> iteration for each <span class="math">i<sup>th</sup></span> particle that composes them. These vectors are updated for <span class="math">j</span> dimensions according to the equations:
+        </p>
+          <p class="math">
+            V<sub>ij</sub><sup>t+1</sup> = wV<sup>t</sup><sub>ij</sub> + c<sub>1</sub>r<sub>1</sub><sup>t</sup>(pbest<sub>ij</sub> - X<sub>ij</sub><sup>t</sup>)+c<sub>2</sub>r<sub>2</sub><sup>t</sup>(gbest<sub>j</sub>-X<sup>t</sup><sub>ij</sub>),
+          </p>
+          <p class="math">
+            X<sub>ij</sub><sup>t+1</sup> = X<sub>ij</sub><sup>t</sup> + V<sub>ij</sub><sup>t</sup>,  
+          </p>
+        <p class="notes">
+          where <span class="math">i = 1, 2, ..., P</span> e <span class="math">j = 1, 2, ..., n</span>. Thus, there are three different factors that contribute to the velocity and, consequently, the movement of a particle in each iteration. 
+        </p>
+        <p class="notes">
+          In the first term, the parameter <span class="math">w</span> is the inertial weight, which for the classical algorithm is a positive constant value. This parameter propagates the previous motion to the current instant by multiplying the previous velocity of the particle in the velocity update equation. This means that when <span class="math">w=1</span> the particle is totally influenced by the previous velocity, keeping the particle in the same direction. Whereas, if <span class="math">w &#8804 0 &#60 1</span>, this influence is reduced, so the particle can move in more directions. Then, as the inertial weight parameter is reduced, the swarm can explore more areas in the search domain, not depending so much on the previous velocity, increasing the chances of finding a global optimum. On the other hand, the algorithm takes longer to run. The reduction of the value of the inertial parameter <span class="math">w</span> over time was an interesting way found for the particles to start their movement by exploring different areas in the search domain, progressively converging to the global minimum (or maximum) point.
+        </p>  
+        <p class="notes">
+          The second term, called individual cognition, is formed by the difference between the best position that the particle has ever occupied and the current position, serving to attract the particle to its best position. The parameter <span class="math">c<sub>1</sub></span> is a positive constant and weighs the importance of the particle's previous experiences. The <span class="math">r<sub>1</sub></span> parameter is a uniform random value in the <span class="math">[0,1]</span> interval and serves to avoid premature convergences, increasing the chances of finding a global optimum.
+        </p>
+        <p class="notes">
+          The last term represents social learning. It is a way for particles to share information about the best point reached by any of them. The constant <span class="math">c<sub>2</sub> is the social learning parameter that weighs the importance of the swarm's global learning. Parameter <span class="math">r<sub>2</sub> has the same role as <span class="math">r<sub>1</sub> and also has uniform distribution over the interval <span class="math">[0,1]</span>.
+        </p>
+        <p class="notes">
+          Figure 1 shows a particle at position <span class="math">X<sub>ij</sub><sup>t</sup></span> and velocity <span class="math">V<sub>ij</sub><sup>t</sup></span> and Figure 2 illustrates how the particle's position and velocity update process takes place.
+        </p>
+        <div class="figure">
+          <img src="\figures\particle.png" alt="Particle" style="width:40%"><br>
+          Figure 1 - Particle<br><br><br>
+        </div>
+        <div class="figure">
+        <img src="\figures\process.png" alt="Process" style="width:70%"> <br>
+          Figure 2 - Process
+       </div>
         <h2>References</h2>
+        <p class="notes" id="ref-1">
+          [1] James Kennedy and Russell Eberhart. <b>Particle swarm optimization.</b> In Proceedings of ICNN'95 International Conference on Neural Networks. Vol. 4. IEEE. 1995, pp. 1942-1948.
+        </p>
     </div>
   </div>
 </body>

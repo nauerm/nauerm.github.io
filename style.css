@@ -1,9 +1,15 @@
 body{
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: sans-serif;
     font-size:10pt;
     background-color: #333;
 }
-
+#title{
+    font-family: 'Trebuchet MS';
+}
+#title > a {
+    text-decoration: none;
+    color: #fff;
+}
 .container{
     max-width:95%;
     margin: 2em auto;
@@ -96,11 +102,13 @@ p::selection {
 li::selection {
     background: rgb(93, 190, 131);
 }
+#nav-text{
+    padding-top:10px;
+}
 #nav-text > a{
     color: white;
 	text-shadow: 2px 2px 1px black;
     font-size: 1.5em;
-    padding: 5px 5px;
     text-align: center;
     text-decoration: none;
 }
@@ -131,4 +139,17 @@ h2{
 p.notes{
     font-size:0.8em;
     text-align: justify;
+}
+span.math{
+    font-family:'Cambria Math', 'Times New Roman', serif;
+    font-size:1em;
+}
+p.math{
+    text-align: center;
+    font-family:'Cambria Math', 'Times New Roman', serif;
+    font-size:0.8em;
+}
+.figure{
+    font-size:0.7em;
+    text-align: center;
 }
