@@ -97,7 +97,7 @@ li{
 }
 
 p::selection {
-    background: rgb(93, 190, 131);
+    background: rgb(109, 221, 184);
 }
 li::selection {
     background: rgb(93, 190, 131);
@@ -144,6 +144,10 @@ span.math{
     font-family:'Cambria Math', 'Times New Roman', serif;
     font-size:1em;
 }
+p.subtitle{
+    font-size:0.7em;
+    text-align: center;
+}
 p.math{
     text-align: center;
     font-family:'Cambria Math', 'Times New Roman', serif;
@@ -151,5 +155,7 @@ p.math{
 }
 .figure{
     font-size:0.7em;
-    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

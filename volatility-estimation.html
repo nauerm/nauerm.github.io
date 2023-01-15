@@ -39,11 +39,11 @@
             Thus, volatility modeling and analysis are important topics to be studied by the financial market.  
           </p>
           <p class="notes">
-            This presents the results of the estimation of the instantaneous annual volatility of stock price returns — computationally simulated — with partial observations in the form of option prices, based on a nonlinear stochastic filter, the Kalman Unscented Filter (UKF)<sup>[<a href="#ref-1">1</a>]</sup>.  
+            This study presents the results of the estimation of the instantaneous annual volatility of stock price returns — computationally simulated — with partial observations in the form of option prices, based on a nonlinear stochastic filter, the Kalman Unscented Filter (UKF)<sup>[<a href="#ref-1">1</a>]</sup>.  
           </p>
         <h2>Stochastic Filtering</h2>
         <p class="notes">
-          <img class="figure" src="figures/signal.png" alt="Filtered signal" style="width:250px; float:right; padding:5px 20px">
+          <img class="figure" src="figures/signal.png" alt="Filtered signal" style="width:300px; float:right; padding:5px 20px">
           Filtering techniques, which are widely used in Signal Processing and Control Engineering, are methods of obtaining relevant information from noiseful data, where noise is a unwanted variation related to the original signal. 
           Stochastic filtering is used to reduce noise in stochastic processes, when trying to estimate the state of a certain dynamic system, attenuating the effect of random noise in order to approximate the expected behavior of the system. 
           The filtering problem is to quantify the relevance of the available data, usually coming from noisy sensor measurements, so they can be used to describe the phenomenon of interest. 
@@ -83,7 +83,7 @@
           In the early 1970's, Black and Scholes developed a widely used model to define option prices over financial instruments<sup>[<a href="#ref-4">4</a>]</sup>. The Black-Scholes model describes the option price fluctuations as a function of time and security index.
         </p>
         <p class="notes">
-          Considering an asset <span class="math">S</span> whose price follows a GBM according to:
+          Considering an asset <span class="math">S</span> whose price follows a Gometric Brownian Motion according to:
         </p>
           <p class="math">
             dS<sub>t</sub> = μS<sub>t</sub>dt + σS<sub>t</sub>dW<sub>t</sub>, &emsp;&emsp; t &#8805 0,
@@ -101,11 +101,34 @@
           where <span class="math">V<sub>n</sub> ∈ ℝ<sub>+</sub></span> is the instant yearly volatility of the underlying asset. 
         </p>
         <p class="notes">
-          
+          The basic structure of UKF involves estimating the state of a nonlinear dynamical system in discrete time. 
+          The UKF comes from the assumption that it is simpler to approximate a probability distribution from a set of points than to approximate an arbitrary nonlinear function via linearization, like the Extended Kalman Filter proposes. 
+          In the UKF, a set of points around the distribution mean, called sigma points, is determined and the nonlinear function is applied to each point, resulting in a set of transformed points. The attributes of the transformed nonlinear distribution can be estimated by calculating the mean and covariance of the transformed set recursively by the filter.
         </p>
 
+        <h2>Simulation and experimental results</h2>
         <p class="notes">
-
+          The simulation was performed considering the dynamic system described below, considering 1 year of 252 trading days.
+        </p>
+        <img class="figure" src="figures/sim.png" style="width:450px; padding:5px 20px;">
+        <p class="subtitle">Simulation of a stock price for <span class="math">S<sub>0</sub> = 40, r = 0.05, μ = 0.07 and T = 1</sub></span>.
+        </p>
+        <p class="notes">
+          Using the same parameters as those used to simulate the stock, a European call option was simulated to be the noisy measurement of the filter. The stock price was also considered as a measurement, with added noise to account for speculations and other factors. The evolution over time of the call option price is the orange line on the figure below.
+        </p>
+        <img class="figure" src="figures/call.png" style="width:450px; padding:5px 20px;">
+        <p class="subtitle">Simulation of a European call option.
+        </p>
+        <p class="notes">
+          The UKF was applied to this system, with the main goal to estimate the annual volatility
+          and the results are presented on the figure below.
+        </p>
+        <img class="figure" src="figures/results.png" style="width:450px; padding:5px 20px;">
+        <p class="subtitle">Estimated annual volatility from UKF.
+        </p>
+        <p class="notes">
+          The results for this study shows good qualitative performance. Thus, it was possible to understand that stochastic filtering is a adequate tool for quantitative Finance, which allows combining the stochastic  modeling with imprecise observations and, in this way, obtain better estimates than that obtained in the traditional way, based only on historical data. This shows that stochastic filtering offers approximated solutions for nonlinear problems in finance.
+          However, with more accurate models for the system dynamic as well as the measurements, better results can be obtained. 
         </p>
 
         <h2>References</h2>
