@@ -43,7 +43,7 @@
           </p>
         <h2>Stochastic Filtering</h2>
         <p class="notes">
-          <img class="figure" src="figures/signal.png" alt="Filtered signal" style="width:300px; float:right; padding:5px 20px">
+          <img class="figure" src="figures/signal.png" alt="Filtered signal" style="max-width:40%; min-width: 250px; float:right; padding:5px 20px">
           Filtering techniques, which are widely used in Signal Processing and Control Engineering, are methods of obtaining relevant information from noiseful data, where noise is a unwanted variation related to the original signal. 
           Stochastic filtering is used to reduce noise in stochastic processes, when trying to estimate the state of a certain dynamic system, attenuating the effect of random noise in order to approximate the expected behavior of the system. 
           The filtering problem is to quantify the relevance of the available data, usually coming from noisy sensor measurements, so they can be used to describe the phenomenon of interest. 
@@ -110,20 +110,20 @@
         <p class="notes">
           The simulation was performed considering the dynamic system described below, considering 1 year of 252 trading days.
         </p>
-        <img class="figure" src="figures/sim.png" style="width:450px; padding:5px 20px;">
+        <img class="figure" src="figures/sim.png" style="max-width:90%; min-width: 450px; padding:5px 20px;">
         <p class="subtitle">Simulation of a stock price for <span class="math">S<sub>0</sub> = 40, r = 0.05, μ = 0.07 and T = 1</sub></span>.
         </p>
         <p class="notes">
           Using the same parameters as those used to simulate the stock, a European call option was simulated to be the noisy measurement of the filter. The stock price was also considered as a measurement, with added noise to account for speculations and other factors. The evolution over time of the call option price is the orange line on the figure below.
         </p>
-        <img class="figure" src="figures/call.png" style="width:450px; padding:5px 20px;">
+        <img class="figure" src="figures/call.png" style="max-width:90%; min-width: 450px; padding:5px 20px;">
         <p class="subtitle">Simulation of a European call option.
         </p>
         <p class="notes">
           The UKF was applied to this system, with the main goal to estimate the annual volatility
           and the results are presented on the figure below.
         </p>
-        <img class="figure" src="figures/results.png" style="width:450px; padding:5px 20px;">
+        <img class="figure" src="figures/results.png" style="max-width:90%; min-width: 450px; padding:5px 20px;">
         <p class="subtitle">Estimated annual volatility from UKF.
         </p>
         <p class="notes">
