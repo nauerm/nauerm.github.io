@@ -45,7 +45,7 @@
           The objective of an optimization problem is to determine the variable represented by a vector <span class="math">X = [x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, ... ,x<sub>n</sub>]</span> where <span class="math">n</span> is the number of variables to the determined in the problem, that minimizes or maximizes the objective function <span class="math">f(X)</span>. For the PSO algorithm, considering a swarm of <span class="math">P</span> particles, there is a position vector <span class="math">X<sub>i</sub><sup>t</sup>=(x<sub>i1</sub> x<sub>i2</sub> ... x<sub>in</sub>)</span> and a velocity vector <span class="math">V<sub>i</sub><sup>t</sup>=(v<sub>i1</sub> v<sub>i2</sub> ... v<sub>in</sub>)</span>in the <span class="math">t<sup>th</sup></span> iteration for each <span class="math">i<sup>th</sup></span> particle that composes them. These vectors are updated for <span class="math">j</span> dimensions according to the equations:
         </p>
           <p class="math">
-            V<sub>ij</sub><sup>t+1</sup> = wV<sup>t</sup><sub>ij</sub> + c<sub>1</sub>r<sub>1</sub><sup>t</sup>(pbest<sub>ij</sub> - X<sub>ij</sub><sup>t</sup>)+c<sub>2</sub>r<sub>2</sub><sup>t</sup>(gbest<sub>j</sub>-X<sup>t</sup><sub>ij</sub>),
+            V<sub>ij</sub><sup>t+1</sup> = wV<sup>t</sup><sub>ij</sub> + c<sub>1</sub>r<sub>1</sub><sup>t</sup>(pbest<sub>ij</sub> - X<sub>ij</sub><sup>t</sup>)+c<sub>2</sub>r<sub>2</sub><sup>t</sup>(gbest<sub>j</sub> - X<sup>t</sup><sub>ij</sub>),
           </p>
           <p class="math">
             X<sub>ij</sub><sup>t+1</sup> = X<sub>ij</sub><sup>t</sup> + V<sub>ij</sub><sup>t</sup>,  

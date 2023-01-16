@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Nauê Magalhães | Personal Page</title>
+    <link rel="icon" href="assets/favicon_k_bg.png" />
+</head>
+
+<body>
+  <!--[if lt IE 9]><script src="js/excanvas.min.js"></script><![endif]-->
+  <div class="container">
+      <div class="background">
+        <div id="crop-bg">  
+          <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+        </div>
+      </div>
+      <div class="overlay">
+        <div id="title"><a href="index.html">Nauê Magalhães</a></div>
+        <div class="row">
+          <div class="column">
+            <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
+        </div>
+          <div class="column">
+            <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
+          </div>
+          <div class="column" id="nav-text">
+            <a href="notes.html">Notes</a>
+          </div>
+      </div>
+    </div>
+    
+    <div class="content">
+      
+      <h2>Data Visualization</h2>
+      <div id="chart" style="width:550px;height:300px; margin: 2em auto;"></div>
+      
+      <div id="chart2" style="width:90%;height:500px; margin: 2em auto;"></div>
+      
+      <button id="reload-page-btn" onclick="window.location.reload(1)"; style="display: block; height:2em; margin: auto">RELOAD</button>
+      
+      <div id="chart3" style="width:90%;height:500px; margin: 2em auto;"></div>
+    
+    </div>
+  </div>
+  <script src="js/flotr2.min.js">
+  </script>
+  
+<script>
+  var wins = [[[0,13],[1,11],[2,15],[3,15],[4,18],[5,21],[6,28]]];
+  var wins2 = [[[0,28]],[[1,28]],[[2,21]],[[3,20]],[[4,19]]];
+  var teams = [
+  [0, "MCI"],
+  [1, "MUN"],
+  [2, "ARS"],
+  [3, "TOT"],
+  [4, "NEW"]
+  ];
+  var years =[
+    [0, 2006],
+    [1, 2007],
+    [2, 2008],
+    [3, 2009],
+    [4, 2010],
+    [5, 2011],
+    [6, 2012],
+  ];
+
+window.onload = function () {
+  Flotr.draw(
+      document.getElementById("chart"), wins2,
+      {
+        title:"Premier League Wins (2011-2012)",
+        colors:["#89AFD2","#1D1D1D", "#DF021D", "#0E204B", "#E67840"],
+        bars: {
+            show: true,
+            barWidth: 0.5,
+            shadowSize: 0,
+            fillOpacity: 1,
+            lineWidth: 0
+        },  
+        yaxis: {
+          min: 0,
+          tickDecimals: 0
+        },
+        xaxis:{
+          ticks: teams
+        },
+        grid:{
+          horizontalLines: false,
+          verticalLines: false,
+        }
+      }
+  );
+};
+
+
+var co2 = [
+    [ 0, 315.97 ],
+    [ 1, 316.91 ],
+    [ 2, 317.64 ],
+    [ 3, 318.45 ],];
+
+var temp = [
+    [ 0,  0.0776 ],
+    [ 1,  0.0280 ],
+    [ 2,  0.1028 ],
+    [ 3,  0.1289 ],];
+var years =[
+    [0, 1959],
+    [1, 1960],
+    [2, 1961],
+    [3, 1962],
+  ];
+	
+var zero = [];
+for (var yr=0; yr<4; yr++) { zero.push([yr, 0]); };
+
+    Flotr.draw(
+    document.getElementById("chart2"),
+    [
+      { 
+        data: zero, 
+        label: "20<sup>th</sup> Century Baseline Temperature",
+        lines: {show:true, lineWidth: 1}, 
+        yaxis: 2, 
+        shadowSize: 0, 
+        color: "#545454" 
+      },
+      { 
+        data: co2, 
+        label: "CO<sub>2</sub> Concentration (ppm)",
+        lines: {show:true}, 
+        shadowSize: 0
+      },
+      { data: temp,
+        label: "Yearly Temperature Difference (°C)", 
+        lines: {show:true}, 
+        shadowSize: 0, 
+        yaxis: 2
+      },
+    ],
+    {
+      title:"Global Temperature and CO<sub>2</sub> Concentration (NOAA Data)",
+      grid: {horizontalLines:false, verticalLines: false},
+      yaxis:{
+        min: 315, max: 320,
+        tickFormatter:function(val){return val+" °C";},
+        tickDecimals: 0
+      },
+      y2axis:{
+        min: -0.15, max:0.14,
+        tickDecimals: 3
+      },
+      xaxis:{
+        ticks:years
+      }
+    }
+    );
+    
+
+
+var stock = 
+[
+  [ 0, 50 ],
+  [ 1, 52 ],
+  [ 2, 51 ],
+  [ 3, 54 ],
+  [ 4, 53 ],
+  [ 5, 55 ],
+];
+Flotr.draw(
+    document.getElementById("chart3"),
+    [
+      { 
+        data: stock, 
+        label: "Stock Price",
+        lines: {show:true}, 
+        shadowSize: 0
+      },
+    ],
+    {
+      title:"Stock price dynamics over time($)",
+      grid: {horizontalLines:false, verticalLines: false},
+      yaxis:{
+        min: 0, max: 60,
+        tickFormatter:function(val){return val+" °$";},
+        tickDecimals: 0
+      }
+    }
+    );
+
+
+</script>
+</body>
+</html>
