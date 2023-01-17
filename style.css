@@ -3,6 +3,10 @@ body{
     font-size:10pt;
     background-color: #333;
 }
+h3{
+    margin-bottom: 0.3em;
+    margin-bottom: 0.3em;
+}
 #title{
     font-family: 'Trebuchet MS';
 }
@@ -97,10 +101,10 @@ li{
 }
 
 p::selection {
-    background: rgb(109, 221, 184);
+    background: #34dfa0;
 }
 li::selection {
-    background: rgb(93, 190, 131);
+    background: #34dfa0;
 }
 #nav-text{
     padding-top:10px;
@@ -169,4 +173,52 @@ p.math{
 }
 .notes:last-of-type{
     padding-bottom:2em;
+}
+
+#reload-page-btn{
+    display: block;
+    width:fit-content;
+    margin: 0px auto;
+  }
+
+
+  .slider {
+    margin: 2em;
+    -webkit-appearance: none;
+    width: 200px;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+
+.parameter{
+    text-align: right;
+    max-width:90%;
+    width:400px;
 }
