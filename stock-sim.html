@@ -26,24 +26,29 @@
             <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
           </div>
           <div class="column" id="nav-text">
-            <a href="notes.html">Notes</a>
+            <a href="archive.html">Archive</a>
           </div>
       </div>
     </div>
     
     <div class="content">
-      
       <h2>Stock Price Simulation</h2>
-      
+      <p class="notes" style="padding:0px">Refer to the <a href="volatility-estimation.html" target="_blank">Stock Returns Volatility Estimation with Unscented Kalman Filter</a> article for more details and theory behind this simulation.
+      </p>
     <div style="margin:auto; text-align: center;">
         <div class="parameter">
           S<sub>0</sub> = <span id="S0_text"></span>
-          <input type="range" min="20" max="200" value="50" class="slider" id="S0_range">
+          <input type="range" min="20" max="200" value="50" class="slider" id="S0_range">  
+          <div class="tooltip"><object data="figures\question.svg" width="20px"></object>
+          <span class="tooltiptext">Initial stock price</span></div>
         </div>
         <div class="parameter">
           σ = <span id="std_text"></span>
           <input type="range" min="1" max="20" value="5" class="slider" id="std_range">
+          <div class="tooltip"><object data="figures\question.svg" width="20px"></object>
+          <span class="tooltiptext">Standard deviation: how widely prices are dispersed from the average.</span></div>
         </div>
+        <button onclick="draw_graph()">Reload</button>
     </div>
           
       <div id="chart" style="max-width:95%;width:1000px;height:400px; margin: 2em auto;">
@@ -53,6 +58,6 @@
   </div>
   <script src="js/flotr2.min.js">
   </script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,16 +1,6 @@
 var graph_is_drawn = false;
 
-var stock = 
-[
-  [ 0, 50 ],
-  [ 1, 52 ],
-  [ 2, 51 ],
-  [ 3, 54 ],
-  [ 4, 53 ],
-  [ 5, 55 ],
-];
-
-const N = 301;
+const N = 253;
 const MAX = 1;
 var S_t = [];
 var std = 5;
@@ -27,7 +17,6 @@ if(!graph_is_drawn)
 
 function draw_graph () 
 {
-  console.log(S);
   // Wiener process
   var rng = Array.from({length: N}, () => (mean + Math.random())*std);
   
@@ -56,7 +45,7 @@ function draw_graph ()
   }
   
   // To prevent the stock to assume negative values
-  if (Smin<=0)
+  while (Smin<=0)
   {
     rng = Array.from({length: N}, () => (mean + Math.random())*std);
     for (var i = 0; i< N; i++)
@@ -78,8 +67,6 @@ function draw_graph ()
     }
   }
 
-  console.log("max:"+Smax);
-
   // Regulate the yaxis maximum value
   var graph_max = 100;
   if (graph_max < Smax)
@@ -95,21 +82,26 @@ function draw_graph ()
         data: S_t, 
         lines: {show:true, lineWidth: 2},
         shadowSize: 0, 
-        color: "#04AA6D" 
+        color: "#04AA6D"
       }
     ],
     {
       title:"Stock Price",
+      HtmlText: false,
+      fontSize: 12,
       // grid: {horizontalLines:false, verticalLines: false}    
       yaxis:
       {
         min: 0, max:graph_max,
         tickFormatter:function(val){return val+" $";},
-        tickDecimals: 0
+        tickDecimals: 0,
+        title:"Value",
+        titleAngle: 90
       },
       xaxis:
       {
-        max:N-1
+        max:N-1,
+        title:"Days",
       }
     }
   )
