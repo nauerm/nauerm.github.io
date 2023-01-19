@@ -11,28 +11,31 @@
 <body>
   <!--[if lt IE 9]><script src="js/excanvas.min.js"></script><![endif]-->
   <div class="container">
-      <div class="background">
-        <div id="crop-bg">  
-          <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+    <div class="background">
+      <div id="crop-bg">  
+        <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+      </div>
+      <div class="row">
+        <div class="column">
+          <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
+        </div>
+        <div class="column">
+          <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
+        </div>
+        <div class="column" id="nav-text">
+          <a href="archive.html">Archive</a>
         </div>
       </div>
-      <div class="overlay">
+    </div>
+    <div class="overlay">
         <div id="title"><a href="index.html">Nauê Magalhães</a></div>
-        <div class="row">
-          <div class="column">
-            <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
-        </div>
-          <div class="column">
-            <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
-          </div>
-          <div class="column" id="nav-text">
-            <a href="archive.html">Archive</a>
-          </div>
-      </div>
     </div>
     
     <div class="content">
       <h2>Stock Price Simulation</h2>
+      <p class="notes">
+        The graph below is the result of an interactive algorithm for simulating stock prices based on a mathematical model called geometric Brownian motion. It uses the initial price and standard deviation inputted by the user to generate a simulation of the stock price's potential changes over the time of a financial year of 252 days. The user can interact with the algorithm by inputting different values and observing the changes in the simulation in real-time.
+      </p>
       <p class="notes" style="padding:0px">Refer to the <a href="volatility-estimation.html" target="_blank">Stock Returns Volatility Estimation with Unscented Kalman Filter</a> article for more details and theory behind this simulation.
       </p>
     <div style="margin:auto; text-align: center;">
@@ -48,7 +51,7 @@
           <div class="tooltip"><object data="figures\question.svg" width="20px"></object>
           <span class="tooltiptext">Standard deviation: how widely prices are dispersed from the average.</span></div>
         </div>
-        <button onclick="draw_graph()">Reload</button>
+        <button onclick="draw_graph()">Simulate</button>
     </div>
           
       <div id="chart" style="max-width:95%;width:1000px;height:400px; margin: 2em auto;">

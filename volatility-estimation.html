@@ -10,24 +10,25 @@
 
 <body>
   <div class="container">
+
       <div class="background">
-        <div id="crop-bg">  
-          <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+      <div id="crop-bg">  
+        <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+      </div>
+      <div class="row">
+        <div class="column">
+          <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
+        </div>
+        <div class="column">
+          <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
+        </div>
+        <div class="column" id="nav-text">
+          <a href="archive.html">Archive</a>
         </div>
       </div>
-      <div class="overlay">
+    </div>
+    <div class="overlay">
         <div id="title"><a href="index.html">Nauê Magalhães</a></div>
-        <div class="row">
-          <div class="column">
-            <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
-        </div>
-          <div class="column">
-            <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
-          </div>
-          <div class="column" id="nav-text">
-            <a href="archive.html">Archive</a>
-          </div>
-      </div>
     </div>
     
     <div class="content">
@@ -68,10 +69,13 @@
           The traditional stochastic filter is the Kalman Filter<sup>[<a href="#ref-3">3</a>]</sup>, which is optimal for linear systems with additive Gaussian noise. Some variations of the Kalman Filter were developed to deal with nonlinear systems, such as the Extended Kalman Filter (EKF) — based on a first order linearization on the nonlinear system equation — and the Unscented Kalman Filter — which does not require linearizations and for highly nonlinear systems has a greater accuracy than the EKF.
         </p>  
         <p class="notes">
-          For the problem addressed in this study, the nonlinearity is on the measurement equation, where I used the Black Scholes model as an observer for the volatility, in the form of a call option price. The section describes the proper financial concepts behind this study and the system modeling.
+          For the problem addressed in this study, the nonlinearity is on the measurement equation, where I used the Black-Scholes model as an observer for the volatility, in the form of a call option price. The section describes the proper financial concepts behind this study and the system modeling.
         </p>
 
-        <h2>Volatility estimation using Black Scholes model</h2>
+        <h2>Volatility estimation using Black-Scholes model</h2>
+        <p class="notes">
+          The Black-Scholes model is a mathematical formula used to calculate the theoretical value of an option. The model takes into account several factors, such as the underlying asset's price, strike price, time to expiration, volatility, and risk-free interest rate, to determine the option's value. It is widely used in finance to value stock options and other financial derivatives.
+        </p>
         <p class="notes">
           In order to properly use the Black-Scholes model to determine option prices, an important aspect is the stock returns volatility. An option is a financial contract that gives the right to buy, call, or sell, put, an asset for a certain price, called strike price, on a certain date, called expiration or maturity date.  
         </p>
@@ -108,7 +112,7 @@
 
         <h2>Simulation and experimental results</h2>
         <p class="notes">
-          The simulation was performed considering the dynamic system described below, considering 1 year of 252 trading days.
+          The simulation was performed considering the dynamic system described in the previous section, considering 1 year of 252 trading days.
         </p>
         <img class="figure" src="figures/sim.png" style="max-width:90%; min-width: 450px; padding:5px 20px;">
         <p class="subtitle">Simulation of a stock price for <span class="math">S<sub>0</sub> = 40, r = 0.05, μ = 0.07 and T = 1</sub></span>.

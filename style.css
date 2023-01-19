@@ -53,6 +53,7 @@ h3{
     z-index:9;
 }
 .content{
+    padding-top:2em;
     margin:-3em 4em;
     font-size:1.6em;
 }
@@ -71,17 +72,11 @@ footer {
   color: white;
 }
 .column {
-                float: left;
-                padding-left: 8px;
-                padding-top: 5px;
-            }
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+    float: left;
+    padding-left: 8px;
+    padding-right: 5px;
+    padding-top: 5px;
 }
-
 #game{
     margin:2em 0em;
     list-style-type: circle;
@@ -116,14 +111,17 @@ li{
 .row{
     display:inline-block;
     padding: 4.5px 5px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 0em 2em 0em 0em;
-}
-.column{
-    padding-right: 5px;
+    position:absolute;
+    bottom:0;
+    left:0;
 }
 .brief{
     font-size:0.7em;
+}
+h4{
+    margin-bottom:0.2em;
 }
 h4 > a{
     text-decoration: none;

@@ -10,29 +10,46 @@
 
 <body>
   <div class="container">
-      <div class="background">
-        <div id="crop-bg">  
-          <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+      
+    <div class="background">
+      <div id="crop-bg">  
+        <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+      </div>
+      <div class="row">
+        <div class="column">
+          <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
+        </div>
+        <div class="column">
+          <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
+        </div>
+        <div class="column" id="nav-text">
+          <a href="archive.html">Archive</a>
         </div>
       </div>
-      <div class="overlay">
+    </div>
+    <div class="overlay">
         <div id="title"><a href="index.html">Nauê Magalhães</a></div>
-        <div class="row">
-          <div class="column">
-            <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
-        </div>
-          <div class="column">
-            <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
-          </div>
-          <div class="column" id="nav-text">
-            <a href="archive.html">Archive</a>
-          </div>
-      </div>
     </div>
     
     <div class="content">
         <h1>Particle Swarm Optimization</h1>
-        <h2>Introduction</h2>
+        <p class="notes">
+          Particle Swarm Optimization (PSO) is a type of algorithm that is used to find the best solution to a problem. The algorithm works by simulating the behavior of a group of particles, such as birds or fish, that move through a space and interact with each other to find the best solution.
+          </p>
+
+          <p class="notes">
+          Each particle represents a potential solution to the problem and has a position and a velocity. The algorithm starts with a group of randomly positioned particles. Each particle then moves through the space, updating its position based on its current velocity and the positions of the other particles. The goal is for the particles to converge on the best solution, which is the global optimum of the function being optimized.
+          </p>
+
+          <p class="notes">
+          The algorithm uses two main parameters: the cognitive component, which is based on the particle's own best position, and the social component, which is based on the best position of the other particles. These two components are used to update the particle's velocity and position, and the algorithm continues to iterate until the particles converge on the best solution.
+          </p>
+
+          <p class="notes">
+          In summary, PSO is a computational method that simulates the behavior of a group of particles, each representing a potential solution, that move through a space and interact with each other to find the global optimum of a function in a multi-dimensional space
+          </p>
+
+          <h2>Introduction</h2>
           <p class="notes">
             <img class="figure" src="https://s8.gifyu.com/images/PSO.gif" alt="PSO" style="max-width:40%; min-width: 300px; float:right;">
             There are several ways to maximize or minimize a function to find the optimum. To establish whether an optimization method is suitable for a problem, different aspects influence, such as concavity and differentiability of the function. The particle swarm optimization algorithm (PSO) proposed by Kennedy and Eberhart in 1995<sup>[<a href="#ref-1">1</a>]</sup> is an algorithm based on the concept of swarm intelligence, generally observed in groups of animals such as fish shoals and herds.
