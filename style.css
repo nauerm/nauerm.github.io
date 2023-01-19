@@ -172,13 +172,11 @@ p.math{
     width:fit-content;
     margin: 0px auto;
   }
-
-
   .slider {
-    margin: 2em;
-    -webkit-appearance: none;
+    margin: 0em;
     width: 200px;
     height: 15px;
+    -webkit-appearance: none;
     border-radius: 5px;
     background: #d3d3d3;
     outline: none;
@@ -214,6 +212,7 @@ p.math{
     margin-top:0.5em;
     max-width:90%;
     width:fit-content;
+    padding: 1em 0em;
     padding-left: 1em;
     display:inline-block;
     background-color: rgb(248, 252, 248);
