@@ -80,7 +80,6 @@ footer {
 #game{
     margin:2em 0em;
     list-style-type: circle;
-    font-size:14pt;
 }
 #gifs{
     object-fit:scale-down;
@@ -273,3 +272,34 @@ object{
   #chart{
     left:-2.5%;
   }
+
+@media screen and (max-width:500px)
+{
+    .container
+    {
+        min-width:fit-content;
+        text-align: justify;
+        font-size: 80%;
+    }
+    .content
+    {
+        margin:-3em 1em;
+    }
+    #profile-pic{
+        margin-left:1em;
+    }
+    .overlay{
+        position:relative;
+        top:-9em;
+        z-index:9;
+    }
+    #gifs{
+        object-fit:none;
+        display: block;
+    }
+    .gif{
+        max-width:80%;
+        display: block;
+        margin:auto;
+    }
+}
