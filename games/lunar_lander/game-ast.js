@@ -66,6 +66,17 @@ var ship = {
         y: -0.8
     }
 }
+//Condições iniciais aleatórias
+ship.x = Math.random()*cvs.width*0.9;
+ship.y = Math.random()*cvs.height*0.2;
+ship.thrust.x = Math.random()*2;
+ship.thrust.y = -Math.random();
+ship.a = Math.random()*3;
+ship.rot = Math.random()*0.01;
+console.log(ship.x)
+console.log(ship.y)
+console.log(ship.thrust.x)
+console.log(ship.thrust.y)
 
 //@note Key Events
 document.addEventListener("keydown", keys); 
