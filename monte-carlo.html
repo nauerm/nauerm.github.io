@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>Nauê Magalhães | Personal Page</title>
+    <link rel="icon" href="assets/favicon_k_bg.png" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="background">
+      <div id="crop-bg">  
+        <img id="bg-img" alt="Brackground image: green tinted eletronic board" src="figures\bg.png">
+      </div>
+      <div class="row">
+        <div class="column">
+          <a id="author-github" href="https://github.com/nauerm" target="_blank"><img src="assets/github.svg" style="-webkit-filter: invert(100%); width: 30px"></a>
+        </div>
+        <div class="column">
+          <a id="author-linkedin" href="https://www.linkedin.com/in/nauerm" target="_blank"><img src="assets/linkedin.png" style="width: 30px"></a>
+        </div>
+        <div class="column" id="nav-text">
+          <a href="archive.html">Archive</a>
+        </div>
+      </div>
+    </div>
+    <div class="overlay">
+        <div id="title"><a href="index.html">Nauê Magalhães</a></div>
+    </div>
+    
+    <div class="content">
+      <h2>Monte Carlo Simulation</h2>
+    <!-- <h2>Introduction</h2> -->
+      <p class="notes">
+        Monte Carlo simulations are widely used techniques that offer powerful solutions for analyzing complex systems, making informed decisions, and understanding probabilistic behavior. Derived from the famous Monte Carlo Casino, these methods leverage random sampling to approximate and simulate real-world scenarios. With their versatility and ability to handle uncertainty, Monte Carlo methods have found applications in various fields, including finance, engineering, epidemiology, and game development.
+      </p>
+      <p class="notes">
+        This technique involves using random sampling to approximate unknown quantities or calculate probabilities. By generating a large number of random samples, these methods provide statistical estimates of quantities that are challenging to calculate analytically. Monte Carlo estimation can be applied to problems with high-dimensional parameter spaces, non-linear relationships, and complex interactions. The core idea is to sample the parameter space randomly and use the collected samples to estimate the desired quantity or distribution.
+      </p>
+      <p class="notes">
+        Monte Carlo simulations go beyond estimation by simulating the behavior of complex systems or processes. These simulations involve repeated random sampling to model the uncertainty and variability in the system's inputs or parameters. By generating numerous random scenarios, Monte Carlo simulations enable analysts to assess the range of possible outcomes, evaluate risks, optimize designs, and make data-driven decisions. These simulations provide a probabilistic view of the system, accounting for uncertainties and allowing for a more comprehensive analysis.
+      </p>
+      <p class="notes">
+        Adopted by engineers, analysts, and researchers across diverse domains, Monte Carlo methods have garnered significant recognition. Their ability to handle uncertainty, analyze complex systems, and provide probabilistic insights make them invaluable in decision-making, optimization, and risk analysis. Whether estimating financial options, optimizing portfolios, or simulating the spread of diseases, Monte Carlo methods empower professionals to explore vast solution spaces and gain deeper understanding in the face of complexity. With their broad range of applications and visually appealing graphical representations, Monte Carlo simulations continue to shape engineering concepts, techniques, and algorithms in today's dynamic world.
+      </p>
+      
+    <h3>Estimating the value of π</h3>
+    <p class="notes">
+        One interesting application of Monte Carlo simulation techniques is estimating the value of π. The Monte Carlo method offers an elegant and intuitive approach to approximate this irrational number. By simulating random points within a square and determining the ratio of points falling inside a unit circle inscribed within the square, we can estimate π. The more points we simulate, the more accurate the estimation becomes. This application not only showcases the power of Monte Carlo simulations but also demonstrates the versatility of these methods in solving mathematical problems. Through this simple example, we witness how Monte Carlo simulations can unlock insights and make complex calculations accessible in engineering and scientific disciplines.
+      </p>
+      <div id="monte-carlo-simulation">
+        <div>
+            <label for="slider">Number of Points: </label>
+            <input
+            type="range"
+            id="slider"
+            min="0"
+            max="100000"
+            step="100"
+            value="10000"
+             class="slider" 
+            />
+            <span id="sliderValue">0</span>
+        </div>
+        <canvas id="canvas-monte-carlo" width="400" height="400"></canvas>
+        <div>
+            Estimated value of π: <span id="pi-value"></span>.
+        </div>
+    </div>
+  </script>
+  <script src="js/monte-carlo-script.js"></script>
+</body>
+</html>
