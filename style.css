@@ -281,6 +281,9 @@ object{
   {
     margin: 2rem auto;
   }
+  .pi{
+    font-family: 'Cambria', serif;
+  }
 
 @media screen and (max-width:500px)
 {
